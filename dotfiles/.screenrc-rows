@@ -1,0 +1,25 @@
+termcapinfo xterm hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007
+defscrollback 10000
+escape ^Pp
+startup_message off
+bindkey -d -k kb stuff "\177"
+
+bell_msg "rows Bell in window %n"
+
+bindkey -k k1 select 0
+bindkey -k k2 select 1
+bindkey -k k3 select 2
+bindkey -k k4 select 3
+bindkey -k k5 select 4
+bindkey -k k6 select 5
+bindkey -k k7 select 6
+bindkey -k k8 select 7
+
+screen cols ${ROWS_SUFFIX}1
+screen cols ${ROWS_SUFFIX}2
+screen cols ${ROWS_SUFFIX}3
+screen cols ${ROWS_SUFFIX}4
+screen cols ${ROWS_SUFFIX}5
+screen cols ${ROWS_SUFFIX}6
+screen cols ${ROWS_SUFFIX}7
+screen cols ${ROWS_SUFFIX}8

@@ -1,0 +1,50 @@
+README for openshellmatrix
+==========================
+
+This is a hack.
+
+I use it all the time for many years now, YMMV.
+
+I hereby release it under the GPLv3 license. No guarantee whatsoever etc.
+
+INSTALL
+=======
+
+Copy bin/* to somewhere in your PATH (I put them in ~/bin ).
+
+Copy dotfiles/.* to your ~ . Should be very easy to fix the scripts to
+use some other place if you don't like this one.
+
+USE
+===
+Run an xterm. Not sure how it works under other terminals.
+
+Inside it run 'rows SOMENAME'.
+
+It will open a 8x8 matrix of screens. Press Enter in any of them to
+get a shell.
+
+You move between the rows with F1 - F8, and between the columns with
+Alt-F1 - Alt-F8.
+
+The screen controlling the rows has ^P as its command character, and
+the ones controlling the columns have ^O. So you can press e.g. ^O c
+to add more columns. Key bindings for up to 12 cols (until Alt-F12)
+are defined.
+
+If you want to carefully close everything, Run:
+Killallopenshell SOMENAME
+It will only kill those windows in which you didn't press Enter.
+Then you can go over the others and cleanly close all the vi sessions
+etc left open.
+
+WHY
+===
+I find it easier to remember where I left something open than when
+it's just a whole lot of open xterms.
+
+Compared to modern multi-tab terminals, it's easier to reconnect
+if something happened to your termianl/X session/etc.
+
+It also works well over ssh on a remote machine.
+

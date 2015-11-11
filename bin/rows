@@ -1,0 +1,11 @@
+#!/bin/sh
+
+ROWS_SUFFIX="$1"
+export ROWS_SUFFIX
+NAME="rows${ROWS_SUFFIX}"
+
+if screen -list "$NAME" | grep -q 'No Sockets found in'; then
+	screen -c .screenrc-rows -S "$NAME"
+else
+	screen -r -d "$NAME"
+fi

@@ -1,0 +1,7 @@
+#!/bin/ash
+
+echo Press Enter to open a shell
+
+read ans
+
+exec /bin/bash

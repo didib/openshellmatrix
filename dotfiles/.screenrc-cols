@@ -1,0 +1,28 @@
+termcapinfo xterm hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007
+defscrollback 10000
+escape ^Oo
+startup_message off
+bindkey -d -k kb stuff "\177"
+bindkey -d "\033[1;3P" select 0
+bindkey -d "\033[1;3Q" select 1
+bindkey -d "\033[1;3R" select 2
+bindkey -d "\033[1;3S" select 3
+bindkey -d "\033[15;3~" select 4
+bindkey -d "\033[17;3~" select 5
+bindkey -d "\033[18;3~" select 6
+bindkey -d "\033[19;3~" select 7
+bindkey -d "\033[20;3~" select 8
+bindkey -d "\033[21;3~" select 9
+bindkey -d "\033[23;3~" select 10
+bindkey -d "\033[24;3~" select 11
+
+bell_msg "cols Bell in window %n"
+
+screen openshell
+screen openshell
+screen openshell
+screen openshell
+screen openshell
+screen openshell
+screen openshell
+screen openshell

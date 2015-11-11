@@ -1,0 +1,30 @@
+#!/bin/sh
+
+SUF="$1"
+
+TMP=$(mktemp -d /tmp/Killallopenshell.XXXXXX)
+
+ps x | \
+	grep '[/]bin/ash.*/openshell' | \
+	awk '{print $1}' > $TMP/all
+
+for p in $(cat $TMP/all); do
+	cat /proc/$p/environ | \
+	tr '\000' '\012' | \
+	grep -q "^ROWS_SUFFIX=$SUF" &&
+	echo $p >> $TMP/chosen
+done
+
+ps u $(cat $TMP/chosen)
+
+echo "Kill above processes [y/n]?"
+read ans
+
+if [ "$ans" = "y" ]; then
+	kill $(cat $TMP/chosen)
+else
+	echo "Aborted"
+fi
+
+rm -rf $TMP
+
